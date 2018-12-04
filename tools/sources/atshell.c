@@ -111,7 +111,7 @@ static int open_device(char *device)
 	return fd;
 }
 
-static int open_socket(bdaddr_t *bdaddr, uint8_t channel, int dev_id)
+static int open_socket(daddr_t *bdaddr, uint8_t channel, int dev_id)
 {
 	struct sockaddr_rc remote_addr, local_addr;
         struct hci_dev_info di;
@@ -164,7 +164,7 @@ int main(int argc, char *argv[])
 {
 	int fd;
         
-	bdaddr_t bdaddr;
+	daddr_t bdaddr;
 	uint8_t channel;
 
 	char *atcmd;

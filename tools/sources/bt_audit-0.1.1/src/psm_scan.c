@@ -79,7 +79,7 @@ int psm_scan(char *dstAddr, char *srcAddr,  unsigned short int s,
 {
 	struct sockaddr_l2 sa, psa;
 	int sock, psock;
-	bdaddr_t src, dst;
+	daddr_t src, dst;
 	unsigned int i;
 	unsigned char buf[1024];
 	char status_line[1024];

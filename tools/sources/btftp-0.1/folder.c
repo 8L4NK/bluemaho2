@@ -29,8 +29,8 @@
 #include <time.h>
 #include <sys/param.h>
 
-#include <gnome-xml/xmlmemory.h>
-#include <gnome-xml/parser.h>
+#include <libxml/xmlmemory.h>
+#include <libxml/parser.h>
 
 #include "goep.h"
 #include "ftp.h"

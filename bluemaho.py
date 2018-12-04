@@ -167,8 +167,8 @@ class Frame_Main(wx.Frame):
 	self.SetBackgroundStyle(wx.BG_STYLE_CUSTOM)
 	fontl = wx.Font(defconf.theme_fontsize,wx.TELETYPE,wx.NORMAL,wx.NORMAL,False,u'Arial')
 	self.SetIcon(wx.Icon(defconf.theme_ico_main,wx.BITMAP_TYPE_PNG))
-	self.SetMinSize((380,522))
-	self.SetMaxSize((380,522))
+	self.SetMinSize((580,822))
+	self.SetMaxSize((580,822))
 	self.SetPosition((defconf.horizontal_pos, defconf.vertical_pos))
 	self.SetLabel(NAME+' @'+defconf.user_location+' ')
 
@@ -433,7 +433,8 @@ class Frame_Main(wx.Frame):
 
     def StartInquiryScan(self, event):
 	if self.HCI_SCAN_DEVICE != 'none':
-		self.monscreen.DeleteRows(0,self.monscreen.GetNumberRows(),True)
+		if self.monscreen.GetNumberRows() > 0:
+			self.monscreen.DeleteRows(0,self.monscreen.GetNumberRows(),True)
 		self.toolbar.EnableTool(ID_MF_TOOLBAR_SCAN_START, False)
 		self.toolbar.EnableTool(ID_MF_TOOLBAR_SCAN_STOP, True)
 		self.RunInquiryScan()
@@ -453,7 +454,8 @@ class Frame_Main(wx.Frame):
         else:
 		if event.data == 0:
 			self.PrintIntoLogger('no devices found.\n')
-			self.monscreen.DeleteRows(0,self.monscreen.GetNumberRows(),True)
+			if self.monscreen.GetNumberRows() > 0:
+				self.monscreen.DeleteRows(0,self.monscreen.GetNumberRows(),True)
 		else:
 			devices = event.data
 
@@ -521,7 +523,8 @@ class Frame_Main(wx.Frame):
 
 
     def ShowInGrid(self, devices):
-	self.monscreen.DeleteRows(0,self.monscreen.GetNumberRows(),True)
+	if self.monscreen.GetNumberRows() > 0:
+		self.monscreen.DeleteRows(0,self.monscreen.GetNumberRows(),True)
 	for dev in devices:
 		a = self.monscreen.GetNumberRows()
 		self.monscreen.AppendRows(1, True)

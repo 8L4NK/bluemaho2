@@ -28,7 +28,7 @@
 #include <bluetooth/l2cap.h>
 
 	/* Defaults */
-	 bdaddr_t bdaddr;
+	 daddr_t bdaddr;
 	 int size  = 20;
 	 int ident = 200;
 	 int delay = 1;

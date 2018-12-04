@@ -16,7 +16,7 @@ bluetracker	python ./tools/bluetracker.py @hci@ @bt_addr@ 0.2 ; script for track
 bss (l2cap layer fuzzer)	./tools/bss -i @hci@ -M 0 -m 0 -o -x @bt_addr@ ; L2CAP layer fuzzer, it can be used to find l2cap packets causing DoS on remote device. tool can perform 12 tests and fuzzing with random data. in BlueMaho it is set to perform all tests by default. for more information please see tool's help.
 #
 # btftp v0.1 by Marcel Holtmann
-btftp	./tools/btftp -i @hci@ @bt_addr@ ; tool for transfering files over Bluetooth OBEX FTP. it browses remote sdp-server for number of obex ftp service channel automatically, but you can also manually specify it, see tools help. \navailablecommands: [ls, cd, mkdir, get, put, del, exit].
+#btftp	./tools/btftp -i @hci@ @bt_addr@ ; tool for transfering files over Bluetooth OBEX FTP. it browses remote sdp-server for number of obex ftp service channel automatically, but you can also manually specify it, see tools help. \navailablecommands: [ls, cd, mkdir, get, put, del, exit].
 #
 # carwhisperer v0.2 by Martin Herfurt. patched
 carwhisperer	./tools/carwhisperer @hci_num@ message.raw in.raw @bt_addr@ <channel> ; carwhisperer intends to exploit bt-devices without display and keyboard (mostly car kits and headsets) for the possible security threat evolving from  the use of standard PIN codes. carwhisperer connects to device (on RFCOMM channel 1) and opens a control connection and connects the SCO links. once the connection has been successfully established, the carwhisperer  starts sending audio to, and recording audio from the headset. this allows attackers to inject audio data into the car. see tools help for more info and usage. see handbook for list of devices and their PIN codes.

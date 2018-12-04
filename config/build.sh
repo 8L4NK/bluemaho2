@@ -132,7 +132,7 @@ mv sonyericsson_reset_display ..
 cd ..
 
 echo -e "\n chmod +x opush_abuse.sh"
-chmod +x ../opush_abuse.sh
+chmod +x ./opush_abuse.sh
 
 echo -e "\nExploits building complete.\n"
 

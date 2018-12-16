@@ -197,7 +197,7 @@ obex_t *__obex_connect(int devid, void *addr, int timeout, int *err)
 		*err = -1;
 		return NULL;
 	}
-	if (!(handle = OBEX_Init(OBEX_TRANS_CUST, obex_event, 0))) {
+	if (!(handle = OBEX_Init(OBEX_TRANS_CUSTOM, obex_event, 0))) {
 		BTERROR("OBEX_Init failed: %s\n", strerror(errno));
 		obex_free(gt);
 		*err = -1;

@@ -197,7 +197,7 @@ static int bt_sock_name2bth(int devid, const char *btname, bdaddr_t * btaddr)
 	for (i = 0; i < niinf; i++) {
 		char devname[128];
 
-		if (hci_remote_name(dd, &piinf[i].bdaddr, sizeof(devname) - 1,
+		if (hci_read_remote_name(dd, &piinf[i].bdaddr, sizeof(devname) - 1,
 				    devname, 100000) >= 0) {
 			if (strcasecmp(devname, btname) == 0) {
 				*btaddr = piinf[i].bdaddr;

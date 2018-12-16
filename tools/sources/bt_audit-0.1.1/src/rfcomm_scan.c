@@ -111,7 +111,7 @@ int rfcomm_scan(char *dstAddr, char *srcAddr,  unsigned short int s, unsigned sh
 	int sock;
 	int res;
 	int alrm_flag;
-	daddr_t src, dst;
+	bdaddr_t src, dst;
 	unsigned int i;
 	struct hci_conn_info_req *cr;
 	bdaddr_t bdaddr;
